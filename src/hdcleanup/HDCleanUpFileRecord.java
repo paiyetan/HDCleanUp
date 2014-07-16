@@ -17,9 +17,11 @@ public class HDCleanUpFileRecord {
     private long lastModified;
     private long daysSinceLastModified;
     private boolean deleted;
+    private boolean successfullyDeleted;
 
     public HDCleanUpFileRecord(String fileName, long filesize, String checksum, 
-                                String parentFolder, long lastModified, long daysSinceLastModified, boolean deleted) {
+                                String parentFolder, long lastModified, long daysSinceLastModified, boolean deleted,
+                                boolean successfullyDeleted) {
         this.fileName = fileName;
         this.filesize = filesize;
         this.checksum = checksum;
@@ -27,6 +29,7 @@ public class HDCleanUpFileRecord {
         this.lastModified = lastModified;
         this.daysSinceLastModified = daysSinceLastModified;
         this.deleted = deleted;
+        this.successfullyDeleted = successfullyDeleted;
     }
 
     //public void setDeleted(boolean deleted) {
@@ -60,6 +63,11 @@ public class HDCleanUpFileRecord {
     public long getDaysSinceLastModified() {
         return daysSinceLastModified;
     }
+
+    public boolean isSuccessfullyDeleted() {
+        return successfullyDeleted;
+    }
+    
     
     
     
